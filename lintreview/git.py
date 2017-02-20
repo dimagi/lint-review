@@ -40,7 +40,7 @@ def clone(url, path):
     """
     Clone a repository from `url` into `path`
     """
-    command = ['git', 'clone', url, path]
+    command = ['git', 'clone', "--depth", "1", url, path]
     return_code = _process(command)
     if return_code:
         log.error("Cloning '%s' repository failed", url)
